@@ -16,15 +16,37 @@
 		<NuspecProperties>version=$(Version)</NuspecProperties>
 		<NuspecFile>groupdocs-viewer-cli.nuspec</NuspecFile>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+ <PreserveCompilationContext>true</PreserveCompilationContext>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
 	</PropertyGroup>
+
+	<PropertyGroup>
+	    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+	</PropertyGroup>
+	<Target DependsOnTargets="BuildOnlySettings;ResolveReferences" Name="CopyProjectReferencesToPackage">
+	    <ItemGroup>
+	        <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+	    </ItemGroup>
+	</Target>
 
 	<PropertyGroup>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GroupDocs.Viewer" Version="21.6" />
+		<PackageReference Include="GroupDocs.Viewer" Version="21.6" >
+		  <PrivateAssets>all</PrivateAssets>
+		  <ExcludeAssets>none</ExcludeAssets>
+		  <IncludeAssets>all</IncludeAssets>
+	        </PackageReference>
+		<PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <ExcludeAssets>none</ExcludeAssets>
+		  <IncludeAssets>all</IncludeAssets>
+		</PackageReference>
 	</ItemGroup>
+
 
 	<ItemGroup>
 		<ProjectReference Include="..\GroupDocs.Viewer.Cli.Common\GroupDocs.Viewer.Cli.Common.csproj" />
