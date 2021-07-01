@@ -98,5 +98,7 @@ Note: GroupDocs.Viewer for .NET will run in evaluation mode. In order to test fu
     <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" />
     <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll" />
     <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll" />
   </files>
 </package>
