@@ -47,6 +47,21 @@ Note: GroupDocs.Viewer for .NET will run in evaluation mode. In order to test fu
    <packageTypes>
      <packageType name="DotnetTool" />
     </packageTypes>
+        <dependencies>
+            <group targetFramework=".NETFramework2.0" />
+            <group targetFramework=".NETStandard2.0">
+              <dependency id="Microsoft.Extensions.DependencyModel" version="2.0.4" />
+              <dependency id="Microsoft.Win32.Registry" version="4.7.0" />
+              <dependency id="SkiaSharp" version="2.80.2" />
+              <dependency id="System.Diagnostics.PerformanceCounter" version="4.5.0" />
+              <dependency id="System.Drawing.Common" version="5.0.0" />
+              <dependency id="System.Reflection.Emit" version="4.7.0" />
+              <dependency id="System.Reflection.Emit.ILGeneration" version="4.7.0" />
+              <dependency id="System.Security.Cryptography.Pkcs" version="4.7.0" />
+              <dependency id="System.Security.Permissions" version="4.5.0" />
+              <dependency id="System.Text.Encoding.CodePages" version="5.0.0" />
+            </group>
+        </dependencies>
   </metadata>
   <files>
     <file src="Resources\icon.png" target="Resources\" />
