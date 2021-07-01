@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<Version>21.6</Version>
+		<AssemblyName>groupdocs-viewer</AssemblyName>
+		<StrongNameKeyId>GroupDocsViewerCli</StrongNameKeyId>
+		<SignAssembly>true</SignAssembly>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace>GroupDocs.Viewer.Cli</RootNamespace>
+		<PackageId>GroupDocs.Viewer.Cli</PackageId>
+		<IsPackable>true</IsPackable>
+		<PackAsTool>true</PackAsTool>
+		<ToolCommandName>groupdocs-viewer</ToolCommandName>
+		<PackageOutputPath>./nupkg</PackageOutputPath>
+		<NuspecProperties>version=$(Version)</NuspecProperties>
+		<NuspecFile>groupdocs-viewer-cli.nuspec</NuspecFile>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<PropertyGroup>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="GroupDocs.Viewer" Version="21.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\GroupDocs.Viewer.Cli.Common\GroupDocs.Viewer.Cli.Common.csproj" />
+		<ProjectReference Include="..\GroupDocs.Viewer.Cli.Utils\GroupDocs.Viewer.Cli.Utils.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Folder Include="Enums\" />
+	</ItemGroup>
+</Project>

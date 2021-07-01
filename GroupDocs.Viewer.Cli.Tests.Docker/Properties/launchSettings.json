@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GroupDocs.Viewer.Cli.Tests.Docker": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

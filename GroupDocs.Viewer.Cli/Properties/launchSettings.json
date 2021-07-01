@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "GroupDocs.Viewer.Cli": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>GroupDocs.Viewer.Cli</id>
+    <version>$version$</version>
+    <authors>GroupDocs</authors>
+    <owners>GroupDocs</owners>
+    <projectUrl>https://someguthub</projectUrl>
+    <icon>Resources\icon.png</icon>
+    <PackageIcon>icon.png</PackageIcon>
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+GroupDocs.Viewer CLI - dotnet tool to view and convert over 170 file and document types.
+
+Supported document formats:
+   * Portable Document Formats - PDF (PDF/A-1a, PDF/A-1b, PDF/A-2a), XPS, OXPS, TEX;
+   * Microsoft Word® Documents - DOC, DOCX, DOCM, DOT, DOTX, DOTM, RTF, TXT, VCF;
+   * Apple SpreadSheets - NUMBERS;
+   * Microsoft Excel® Spreadsheets - XLS, XLSX, XLSM, XLSB, CSV, TSV, XLAM, XLTX, FODS, SXC, SpreadsheetML;
+   * Microsoft PowerPoint® Presentations - PPT, PPTX, PPS, PPSX, PPTM, POTX, POT, POTM, PPSM;
+   * Microsoft Visio® Diagrams - VSD, VSDX, VSS, VST, VSTX, VSTM, VSSX, VSSM, VSX, VTX, VDW, VDX, SVG, SVGZ, VSDM;
+   * Microsoft Project® Formats- MPP, MPT, MPX;
+   * Microsoft OneNote® Formats - ONE;
+   * Microsoft Outlook® Formats - PST, OST;
+   * Open Document Formats - ODT, FODG, ODG, OTG, FODT, OTT, ODS, OTS, FODP, ODP, OTP;
+   * Archive Formats - ZIP, TAR, BZ2, GZ, RAR;
+   * CAD Formats - DXF, DWG, DWT, STL, IFC, DWF, DGN, PLT, HPG, OBJ, CF2, IGS;
+   * Ebook Formats - EPUB, MOBI;
+   * Image Formats - CDR, CMX, TIFF, TIF, JPG, JPEG, PNG, GIF, BMP, ICO, TGA, JP2, J2C, J2K, JPF, JPX, JPM, DIF, WMF, WMZ, EMF, EMZ, WEBP, DJVU, CGM, PCL, PSD, PSB, DCM, PS, EPS, DIB;
+   * Email Formats - EML, EMLX, MSG, MBox, NSF;
+   * Markup Formats - HTM, HTML, MHT, MHTML, XML;
+   * Programming Language Formats - AS, AS3, ASM, BAT, C, CC, CMAKE, CPP, CS, VB, CSS, CXX, DIFF, ERB, GROOVY, H, HAML, HH, JAVA, JS, JSON, LESS, LOG, M, MAKE, MD, ML, MM, PHP, PL, PROPERTIES, PY, RB, RST, SASS, SCALA, SCM, SCRIPT, SH, SML, SQL, VIM, YAML.
+   * Web formats - CHM;
+
+For more details on the GroupDocs.Viewer for .NET API, please visit product website at:
+https://products.groupdocs.com/viewer
+
+Note: GroupDocs.Viewer for .NET will run in evaluation mode. In order to test full features of the product, please request a free 30-day temporary license.
+
+</description>
+   <summary>View and convert documents, intuitive and powerful GroupDocs.Viewer dotnet tool CLI.</summary>
+   <copyright>©Aspose Pty Ltd 2001-2021. All Rights Reserved.</copyright>
+   <tags>
+    Document-Viewer CLI Html-Viewer Image-Viewer PDF-Viewer
+    Doc-Viewer PDF Word Excel PowerPoint EMail Image PDF DOC DOCX NUMBERS XLS XLSX PPT PPTX TIFF PNG JPG
+   </tags>
+   <packageTypes>
+     <packageType name="DotnetTool" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src="Resources\icon.png" target="Resources\" />
+    <file src="obj\DotnetToolSettings.xml" target="tools\netcoreapp3.1\any\DotnetToolSettings.xml" />
+    <file src="bin\Release\netcoreapp3.1\groupdocs-viewer.dll" target="tools\netcoreapp3.1\any\groupdocs-viewer.dll" />
+    <file src="bin\Release\netcoreapp3.1\groupdocs-viewer.deps.json" target="tools\netcoreapp3.1\any\groupdocs-viewer.deps.json" />
+    <file src="bin\Release\netcoreapp3.1\groupdocs-viewer.runtimeconfig.json" target="tools\netcoreapp3.1\any\groupdocs-viewer.runtimeconfig.json" />
+    <file src="bin\Release\netcoreapp3.1\GroupDocs.Viewer.dll" target="tools\netcoreapp3.1\any\GroupDocs.Viewer.dll" />
+    <file src="bin\Release\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll" target="tools\netcoreapp3.1\any\Microsoft.DotNet.PlatformAbstractions.dll" />
+    <file src="bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll" target="tools\netcoreapp3.1\any\Microsoft.Extensions.DependencyModel.dll" />
+    <file src="bin\Release\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll" target="tools\netcoreapp3.1\any\Microsoft.Win32.SystemEvents.dll" />
+    <file src="bin\Release\netcoreapp3.1\Newtonsoft.Json.dll" target="tools\netcoreapp3.1\any\Newtonsoft.Json.dll" />
+    <file src="bin\Release\netcoreapp3.1\SkiaSharp.dll" target="tools\netcoreapp3.1\any\SkiaSharp.dll" />
+    <file src="bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll" target="tools\netcoreapp3.1\any\System.Configuration.ConfigurationManager.dll" />
+    <file src="bin\Release\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll" target="tools\netcoreapp3.1\any\System.Diagnostics.PerformanceCounter.dll" />
+    <file src="bin\Release\netcoreapp3.1\System.Drawing.Common.dll" target="tools\netcoreapp3.1\any\System.Drawing.Common.dll" />
+    <file src="bin\Release\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll" target="tools\netcoreapp3.1\any\System.Runtime.CompilerServices.Unsafe.dll" />
+    <file src="bin\Release\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll" target="tools\netcoreapp3.1\any\System.Security.Cryptography.Pkcs.dll" />
+    <file src="bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll" target="tools\netcoreapp3.1\any\System.Security.Cryptography.ProtectedData.dll" />
+    <file src="bin\Release\netcoreapp3.1\System.Security.Permissions.dll" target="tools\netcoreapp3.1\any\System.Security.Permissions.dll" />
+    <file src="bin\Release\netcoreapp3.1\System.Text.Encoding.CodePages.dll" target="tools\netcoreapp3.1\any\System.Text.Encoding.CodePages.dll" />
+    <file src="bin\Release\netcoreapp3.1\GroupDocs.Viewer.Cli.Common.dll" target="tools\netcoreapp3.1\any\GroupDocs.Viewer.Cli.Common.dll" />
+    <file src="bin\Release\netcoreapp3.1\GroupDocs.Viewer.Cli.Utils.dll" target="tools\netcoreapp3.1\any\GroupDocs.Viewer.Cli.Utils.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\osx\native\libSkiaSharp.dylib" target="tools\netcoreapp3.1\any\runtimes\osx\native\libSkiaSharp.dylib" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win-arm64\native\libSkiaSharp.dll" target="tools\netcoreapp3.1\any\runtimes\win-arm64\native\libSkiaSharp.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win-x64\native\libSkiaSharp.dll" target="tools\netcoreapp3.1\any\runtimes\win-x64\native\libSkiaSharp.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win-x86\native\libSkiaSharp.dll" target="tools\netcoreapp3.1\any\runtimes\win-x86\native\libSkiaSharp.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll" target="tools\netcoreapp3.1\any\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll" />
+    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" />
+  </files>
+</package>
