@@ -35,16 +35,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GroupDocs.Viewer" Version="21.6" >
-		  <PrivateAssets>all</PrivateAssets>
-		  <ExcludeAssets>none</ExcludeAssets>
-		  <IncludeAssets>all</IncludeAssets>
-	        </PackageReference>
-		<PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0">
-		  <PrivateAssets>all</PrivateAssets>
-		  <ExcludeAssets>none</ExcludeAssets>
-		  <IncludeAssets>all</IncludeAssets>
-		</PackageReference>
+		<PackageReference Include="GroupDocs.Viewer" Version="21.6" />
 	</ItemGroup>
 
 
