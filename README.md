@@ -30,7 +30,7 @@ Set `pages` parameter valued to `1,3,4` to convert first three pages of the docu
 groupdocs-viewer view source.docx --output-format pdf --pages 1,2,3
 ```
 
-The `--help` or `view --help` option provides more detail about each parameter.
+The `--help` or `view --help` option provides more detail about each parameter. \
 The `--version` option provides information about CLI version in use.
 
 ## Commands
