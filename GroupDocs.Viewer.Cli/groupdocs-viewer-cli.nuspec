@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>GroupDocs.Viewer.Cli</id>
+    <id>GroupDocs.Viewer-CLI</id>
     <version>$version$</version>
     <authors>GroupDocs</authors>
     <owners>GroupDocs</owners>
-    <projectUrl>https://someguthub</projectUrl>
+    <projectUrl>https://github.com/groupdocs-viewer/GroupDocs.Viewer-for-.NET-CLI</projectUrl>
     <icon>Resources\icon.png</icon>
     <PackageIcon>icon.png</PackageIcon>
     <license type="expression">MIT</license>

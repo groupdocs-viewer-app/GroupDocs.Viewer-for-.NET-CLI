@@ -8,7 +8,7 @@
 		<SignAssembly>true</SignAssembly>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<RootNamespace>GroupDocs.Viewer.Cli</RootNamespace>
-		<PackageId>GroupDocs.Viewer.Cli</PackageId>
+		<PackageId>GroupDocs.Viewer-CLI</PackageId>
 		<IsPackable>true</IsPackable>
 		<PackAsTool>true</PackAsTool>
 		<ToolCommandName>groupdocs-viewer</ToolCommandName>
