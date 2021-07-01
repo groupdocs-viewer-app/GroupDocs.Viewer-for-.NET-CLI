@@ -48,3 +48,8 @@ jobs:
 
           # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
           # INCLUDE_SYMBOLS: false
+      - name: publish on version change
+        uses: actions/upload-artifact@v2
+        with:
+         name: artifacts
+         path: /home/runner/work/GroupDocs.Viewer-for-.NET-CLI/GroupDocs.Viewer-for-.NET-CLI/GroupDocs.Viewer-CLI.21.6.0.nupkg
