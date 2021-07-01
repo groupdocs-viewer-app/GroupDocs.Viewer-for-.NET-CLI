@@ -1,4 +1,4 @@
-name: publish to nuget STAGE
+name: Publish to nuget STAGE
 on:
  workflow_dispatch:  
 
