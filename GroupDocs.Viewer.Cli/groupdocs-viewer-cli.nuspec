@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>GroupDocs.Viewer-CLI</id>
     <version>$version$</version>
@@ -7,7 +7,6 @@
     <owners>GroupDocs</owners>
     <projectUrl>https://github.com/groupdocs-viewer/GroupDocs.Viewer-for-.NET-CLI</projectUrl>
     <icon>Resources\icon.png</icon>
-    <PackageIcon>icon.png</PackageIcon>
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
@@ -38,49 +37,20 @@ https://products.groupdocs.com/viewer
 
 Note: GroupDocs.Viewer for .NET will run in evaluation mode. In order to test full features of the product, please request a free 30-day temporary license.
 
-</description>
+    </description>
    <summary>View and convert documents, intuitive and powerful GroupDocs.Viewer dotnet tool CLI.</summary>
    <copyright>©Aspose Pty Ltd 2001-2021. All Rights Reserved.</copyright>
    <tags>
     Document-Viewer CLI Html-Viewer Image-Viewer PDF-Viewer
     Doc-Viewer PDF Word Excel PowerPoint EMail Image PDF DOC DOCX NUMBERS XLS XLSX PPT PPTX TIFF PNG JPG
    </tags>
-   <packageTypes>
-     <packageType name="DotnetTool" />
+    <packageTypes>
+      <packageType name="DotnetTool" />
     </packageTypes>
   </metadata>
   <files>
-    <file src="Resources\icon.png" target="Resources\" />
+  <file src="Resources\icon.png" target="Resources\" />
     <file src="obj\DotnetToolSettings.xml" target="tools\netcoreapp3.1\any\DotnetToolSettings.xml" />
-    <file src="bin\Release\netcoreapp3.1\groupdocs-viewer.dll" target="tools\netcoreapp3.1\any\groupdocs-viewer.dll" />
-    <file src="bin\Release\netcoreapp3.1\groupdocs-viewer.deps.json" target="tools\netcoreapp3.1\any\groupdocs-viewer.deps.json" />
-    <file src="bin\Release\netcoreapp3.1\groupdocs-viewer.runtimeconfig.json" target="tools\netcoreapp3.1\any\groupdocs-viewer.runtimeconfig.json" />
-    <file src="bin\Release\netcoreapp3.1\GroupDocs.Viewer.dll" target="tools\netcoreapp3.1\any\GroupDocs.Viewer.dll" />
-    <file src="bin\Release\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll" target="tools\netcoreapp3.1\any\Microsoft.DotNet.PlatformAbstractions.dll" />
-    <file src="bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll" target="tools\netcoreapp3.1\any\Microsoft.Extensions.DependencyModel.dll" />
-    <file src="bin\Release\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll" target="tools\netcoreapp3.1\any\Microsoft.Win32.SystemEvents.dll" />
-    <file src="bin\Release\netcoreapp3.1\Newtonsoft.Json.dll" target="tools\netcoreapp3.1\any\Newtonsoft.Json.dll" />
-    <file src="bin\Release\netcoreapp3.1\SkiaSharp.dll" target="tools\netcoreapp3.1\any\SkiaSharp.dll" />
-    <file src="bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll" target="tools\netcoreapp3.1\any\System.Configuration.ConfigurationManager.dll" />
-    <file src="bin\Release\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll" target="tools\netcoreapp3.1\any\System.Diagnostics.PerformanceCounter.dll" />
-    <file src="bin\Release\netcoreapp3.1\System.Drawing.Common.dll" target="tools\netcoreapp3.1\any\System.Drawing.Common.dll" />
-    <file src="bin\Release\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll" target="tools\netcoreapp3.1\any\System.Runtime.CompilerServices.Unsafe.dll" />
-    <file src="bin\Release\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll" target="tools\netcoreapp3.1\any\System.Security.Cryptography.Pkcs.dll" />
-    <file src="bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll" target="tools\netcoreapp3.1\any\System.Security.Cryptography.ProtectedData.dll" />
-    <file src="bin\Release\netcoreapp3.1\System.Security.Permissions.dll" target="tools\netcoreapp3.1\any\System.Security.Permissions.dll" />
-    <file src="bin\Release\netcoreapp3.1\System.Text.Encoding.CodePages.dll" target="tools\netcoreapp3.1\any\System.Text.Encoding.CodePages.dll" />
-    <file src="bin\Release\netcoreapp3.1\GroupDocs.Viewer.Cli.Common.dll" target="tools\netcoreapp3.1\any\GroupDocs.Viewer.Cli.Common.dll" />
-    <file src="bin\Release\netcoreapp3.1\GroupDocs.Viewer.Cli.Utils.dll" target="tools\netcoreapp3.1\any\GroupDocs.Viewer.Cli.Utils.dll" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\osx\native\libSkiaSharp.dylib" target="tools\netcoreapp3.1\any\runtimes\osx\native\libSkiaSharp.dylib" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\win-arm64\native\libSkiaSharp.dll" target="tools\netcoreapp3.1\any\runtimes\win-arm64\native\libSkiaSharp.dll" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\win-x64\native\libSkiaSharp.dll" target="tools\netcoreapp3.1\any\runtimes\win-x64\native\libSkiaSharp.dll" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\win-x86\native\libSkiaSharp.dll" target="tools\netcoreapp3.1\any\runtimes\win-x86\native\libSkiaSharp.dll" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll" target="tools\netcoreapp3.1\any\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll" />
-    <file src="bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" target="tools\netcoreapp3.1\any\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" />
+    <file src="bin\Release\netcoreapp3.1\publish\**" target="tools\netcoreapp3.1\any" />
   </files>
 </package>

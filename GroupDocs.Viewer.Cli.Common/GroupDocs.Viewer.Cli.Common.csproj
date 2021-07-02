@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GroupDocs.Viewer" Version="21.4.1" />
+    <PackageReference Include="GroupDocs.Viewer" Version="21.6.0" />
   </ItemGroup>
 
   <ItemGroup>
