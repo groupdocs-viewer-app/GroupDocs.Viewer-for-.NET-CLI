@@ -7,7 +7,7 @@ CLI - Command Line Interface for [GroupDocs.Viewer for .NET](https://products.gr
 GroupDocs.Viewer CLI is a dotnet tool. To start using the CLI you'll need .NET runtime and GroupDocs.Viewer CLI.
 
 1. Install .NET Core runtime following by the [instructions](https://docs.microsoft.com/en-us/dotnet/core/install/)
-2. Install dotnet tool by running `dotnet tool install groupdocs.viewer.cli`
+2. Install dotnet tool by running `dotnet tool install --global groupDocs.viewer-cli`
 3. You can run GroupDocs.Viewer.CLI by using command `groupdocs-viewer`
 
 ## Example usage
