@@ -23,7 +23,7 @@ Supported document formats:
    * Microsoft OneNote® Formats - ONE;
    * Microsoft Outlook® Formats - PST, OST;
    * Open Document Formats - ODT, FODG, ODG, OTG, FODT, OTT, ODS, OTS, FODP, ODP, OTP;
-   * Archive Formats - ZIP, TAR, BZ2, GZ, RAR;
+   * Archive Formats - ZIP, TAR, BZ2, GZ, RAR, 7-Zip, XZ, TXZ, TGZ;
    * CAD Formats - DXF, DWG, DWT, STL, IFC, DWF, DGN, PLT, HPG, OBJ, CF2, IGS;
    * Ebook Formats - EPUB, MOBI;
    * Image Formats - CDR, CMX, TIFF, TIF, JPG, JPEG, PNG, GIF, BMP, ICO, TGA, JP2, J2C, J2K, JPF, JPX, JPM, DIF, WMF, WMZ, EMF, EMZ, WEBP, DJVU, CGM, PCL, PSD, PSB, DCM, PS, EPS, DIB;
