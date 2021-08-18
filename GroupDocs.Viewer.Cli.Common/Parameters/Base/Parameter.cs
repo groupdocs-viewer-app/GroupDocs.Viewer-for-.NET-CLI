@@ -248,6 +248,11 @@ namespace GroupDocs.Viewer.Cli.Common.Parameters
         {
             return ValidValues.Contains(value);
         }
+
+        public virtual void Execute(Viewer viewer)
+        {
+            // Override if need.
+        }
         #endregion
     }
 }

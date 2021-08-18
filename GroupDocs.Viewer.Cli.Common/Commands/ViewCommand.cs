@@ -74,6 +74,11 @@ namespace GroupDocs.Viewer.Cli.Common.Commands
         private bool Verbose { get; set; }
 
         /// <summary>
+        /// Indicate that List of attachments requested.
+        /// </summary>
+        private bool GetAttachmentsListRequested { get; set; }
+
+        /// <summary>
         /// Max height for output image.
         /// </summary>
         int MaxHeight { get; set; }
@@ -94,6 +99,16 @@ namespace GroupDocs.Viewer.Cli.Common.Commands
         int OutputHeight { get; set; }
 
         /// <summary>
+        /// Attachments Ids List
+        /// </summary>
+        string[] AttachmentsIds { get; set; }
+
+        /// <summary>
+        /// Parameter parsers container.
+        /// </summary>
+        ParameterParsersContainer ParameterParsersContainer { get; set; }
+
+        /// <summary>
         /// Viewer command type
         /// </summary>
         public CommandType CommandType { get => CommandType.View; }
@@ -112,14 +127,17 @@ namespace GroupDocs.Viewer.Cli.Common.Commands
                 Reporter.Output.WriteLine("License set.");
             }
 
-            // Display converting pages info.
-            if (PagesNumbers == null || PagesNumbers.Length == 0)
+            if (!GetAttachmentsListRequested && AttachmentsIds.Length == 0)
             {
-                Reporter.Output.WriteLine("Converting all pages.");
-            }
-            else
-            {
-                Reporter.Output.WriteLine($"Converting {string.Join(",", PagesNumbers)} pages");
+                // Display converting pages info.
+                if (PagesNumbers == null || PagesNumbers.Length == 0)
+                {
+                    Reporter.Output.WriteLine("Converting all pages.");
+                }
+                else
+                {
+                    Reporter.Output.WriteLine($"Converting {string.Join(",", PagesNumbers)} pages");
+                }
             }
 
             LoadOptions loadOptions = new LoadOptions()
@@ -133,6 +151,21 @@ namespace GroupDocs.Viewer.Cli.Common.Commands
             using Viewer viewer = CommandContext.IsVerbose()
                 ? new Viewer(SourceFileName, loadOptions, new ViewerSettings(new CliLogger()))
                 : new Viewer(SourceFileName, loadOptions);
+
+            // If list of attachments requested - show attachments list on screen.
+            if (GetAttachmentsListRequested)
+            {
+                ParameterParsersContainer.GetByParameterType<AttachmentsListParameter, bool>().Parameter.Execute(viewer);
+
+                return;
+            }
+
+            if (AttachmentsIds.Length > 0)
+            {
+                ParameterParsersContainer.GetByParameterType<SaveAttachmentsParameter, string[]>().Parameter.Execute(viewer);
+
+                return;
+            }
 
             // Set additional parameters for options.
 
@@ -230,9 +263,9 @@ namespace GroupDocs.Viewer.Cli.Common.Commands
 
             // Take source file name and creating parameters container.
             SourceFileName = thisCommandArguments[0];
-            ParameterParsersContainer parameterParsersContainer = CreateParameterContainer();
+            ParameterParsersContainer = CreateParameterContainer();
 
-            CommandLineParseResult parameterParsersValidationResult = parameterParsersContainer.ValidateAllParametersAndCheckIsValid(args);
+            CommandLineParseResult parameterParsersValidationResult = ParameterParsersContainer.ValidateAllParametersAndCheckIsValid(args);
 
             if (!parameterParsersValidationResult.Success)
             {
@@ -240,11 +273,11 @@ namespace GroupDocs.Viewer.Cli.Common.Commands
             }
 
             // Take parsed and validated parameters values.
-            SetParametersValues(parameterParsersContainer);
+            SetParametersValues(ParameterParsersContainer);
 
             CommandContext.SetVerbose(Verbose);
 
-            string fileType = parameterParsersContainer.GetByParameterType<FileTypeParameter, string>().ResultValue;
+            string fileType = ParameterParsersContainer.GetByParameterType<FileTypeParameter, string>().ResultValue;
 
             if (!string.IsNullOrEmpty(fileType))
             {
@@ -273,6 +306,8 @@ namespace GroupDocs.Viewer.Cli.Common.Commands
             Verbose = parameterParsersContainer.GetByParameterType<VerboseParameter, bool>().ResultValue;
             OutputFormat = parameterParsersContainer.GetByParameterType<OutputFormatParameter, OutputFormat>().ResultValue;
             DestinationFileName = parameterParsersContainer.GetByParameterType<OutputPathParameter, string>().ResultValue;
+            GetAttachmentsListRequested = parameterParsersContainer.GetByParameterType<AttachmentsListParameter, bool>().ResultValue;
+            AttachmentsIds = parameterParsersContainer.GetByParameterType<SaveAttachmentsParameter, string[]>().ResultValue;
         }
 
         /// <summary>
@@ -296,6 +331,8 @@ namespace GroupDocs.Viewer.Cli.Common.Commands
             parameterParsersContainer.RegisterParameter(new VerboseParameter());
             parameterParsersContainer.RegisterParameter(new OutputFormatParameter());
             parameterParsersContainer.RegisterParameter(new OutputPathParameter());
+            parameterParsersContainer.RegisterParameter(new AttachmentsListParameter());
+            parameterParsersContainer.RegisterParameter(new SaveAttachmentsParameter());
 
             return parameterParsersContainer;
         }

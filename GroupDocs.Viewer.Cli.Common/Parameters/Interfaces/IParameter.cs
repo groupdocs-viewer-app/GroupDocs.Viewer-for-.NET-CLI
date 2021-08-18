@@ -43,5 +43,10 @@
         /// </summary>
         /// <returns></returns>
         string GetHelpText();
+
+        /// <summary>
+        /// Execute parameter in the current viewer context (optional).
+        /// </summary>
+        void Execute(Viewer viewer);
     }
 }

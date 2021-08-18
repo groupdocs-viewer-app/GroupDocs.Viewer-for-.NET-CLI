@@ -73,6 +73,11 @@ The `--version` option provides information about CLI version in use.
 
 * `--verbose` [short `-v`]: Enable detailed logging to console.
 
+* `--save-attachments`: Save attachments on disk if selected file support it.
+
+* `--attachments-list`: Get attachments list for selected file if it supported.
+
+
 ## Setting the license
 
 Without a license the tool will work in trial mode so you can convert only first two pages of a document see [Evaluation Limitations and Licensing of GroupDocs.Viewer](https://docs.groupdocs.com/viewer/net/evaluation-limitations-and-licensing-of-groupdocs-viewer/) for more details. A temporary license can be requested at [Get a Temporary License](https://purchase.groupdocs.com/temporary-license).
