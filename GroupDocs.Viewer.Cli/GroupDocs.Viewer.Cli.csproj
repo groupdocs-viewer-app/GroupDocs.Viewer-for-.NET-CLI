@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<Version>21.8</Version>
+		<Version>21.9</Version>
 		<AssemblyName>groupdocs-viewer</AssemblyName>
 		<StrongNameKeyId>GroupDocsViewerCli</StrongNameKeyId>
 		<SignAssembly>true</SignAssembly>
