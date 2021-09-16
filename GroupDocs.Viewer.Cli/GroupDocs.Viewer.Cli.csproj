@@ -35,7 +35,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GroupDocs.Viewer" Version="21.8.0" />
+		<PackageReference Include="GroupDocs.Viewer" Version="21.9.0" />
 	</ItemGroup>
 
 
