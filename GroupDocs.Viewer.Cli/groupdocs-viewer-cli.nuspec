@@ -29,7 +29,7 @@ Supported document formats:
    * Image Formats - CDR, CMX, TIFF, TIF, JPG, JPEG, PNG, GIF, BMP, ICO, TGA, JP2, J2C, J2K, JPF, JPX, JPM, DIF, WMF, WMZ, EMF, EMZ, WEBP, DJVU, CGM, PCL, PSD, PSB, DCM, PS, EPS, DIB;
    * Email Formats - EML, EMLX, MSG, MBox, NSF;
    * Markup Formats - HTM, HTML, MHT, MHTML, XML;
-   * Programming Language Formats - AS, AS3, ASM, BAT, C, CC, CMAKE, CPP, CS, VB, CSS, CXX, DIFF, ERB, GROOVY, H, HAML, HH, JAVA, JS, JSON, LESS, LOG, M, MAKE, MD, ML, MM, PHP, PL, PROPERTIES, PY, RB, RST, SASS, SCALA, SCM, SCRIPT, SH, SML, SQL, VIM, YAML.
+   * Programming Language Formats - AS, AS3, ASM, BAT, C, CC, CMAKE, CPP, CS, VB, CSS, CXX, DIFF, ERB, GROOVY, H, HAML, HH, JAVA, JS, JSON, LESS, LOG, M, MAKE, MD, ML, MM, PHP, PL, PROPERTIES, PY, RB, RST, SASS, SCALA, SCM, SCRIPT, SH, SML, SQL, VIM, YAML, PS1, PSD1, PSM1.
    * Web formats - CHM;
 
 For more details on the GroupDocs.Viewer for .NET API, please visit product website at:
