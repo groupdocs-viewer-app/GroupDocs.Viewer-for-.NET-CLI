@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<Version>21.9</Version>
+		<Version>21.10</Version>
 		<AssemblyName>groupdocs-viewer</AssemblyName>
 		<StrongNameKeyId>GroupDocsViewerCli</StrongNameKeyId>
 		<SignAssembly>true</SignAssembly>
@@ -35,7 +35,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GroupDocs.Viewer" Version="21.9.0" />
+		<PackageReference Include="GroupDocs.Viewer" Version="21.10.0" />
 	</ItemGroup>
 
 
