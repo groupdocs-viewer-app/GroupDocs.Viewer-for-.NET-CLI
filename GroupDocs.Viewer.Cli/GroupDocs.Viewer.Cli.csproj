@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<Version>21.10</Version>
+		<Version>21.11</Version>
 		<AssemblyName>groupdocs-viewer</AssemblyName>
 		<StrongNameKeyId>GroupDocsViewerCli</StrongNameKeyId>
 		<SignAssembly>true</SignAssembly>
@@ -17,6 +17,7 @@
 		<NuspecFile>groupdocs-viewer-cli.nuspec</NuspecFile>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	        <PackageIcon>images\icon.png</PackageIcon>
  <PreserveCompilationContext>true</PreserveCompilationContext>
     <PreserveCompilationReferences>true</PreserveCompilationReferences>
 	</PropertyGroup>
@@ -35,9 +36,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GroupDocs.Viewer" Version="21.10.0" />
+		<PackageReference Include="GroupDocs.Viewer" Version="21.11.0" />
 	</ItemGroup>
 
+        <ItemGroup>
+          <None Include="Resources\icon.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
+        </ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\GroupDocs.Viewer.Cli.Common\GroupDocs.Viewer.Cli.Common.csproj" />
