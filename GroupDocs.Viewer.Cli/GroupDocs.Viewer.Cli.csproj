@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 		<Version>22.1</Version>
@@ -15,24 +14,23 @@
 		<PackageOutputPath>./nupkg</PackageOutputPath>
 		<NuspecProperties>version=$(Version)</NuspecProperties>
 		<NuspecFile>groupdocs-viewer-cli.nuspec</NuspecFile>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-	        <PackageIcon>images\icon.png</PackageIcon>
- <PreserveCompilationContext>true</PreserveCompilationContext>
-    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+		<PackageIcon>images\icon.png</PackageIcon>
+		<PreserveCompilationContext>true</PreserveCompilationContext>
+		<PreserveCompilationReferences>true</PreserveCompilationReferences>
 	</PropertyGroup>
 
 	<PropertyGroup>
-	    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
 	</PropertyGroup>
 	<Target DependsOnTargets="BuildOnlySettings;ResolveReferences" Name="CopyProjectReferencesToPackage">
-	    <ItemGroup>
-	        <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
-	    </ItemGroup>
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+		</ItemGroup>
 	</Target>
 
 	<PropertyGroup>
-	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -40,16 +38,16 @@
 		<PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.80.3" />
 	</ItemGroup>
 
-        <ItemGroup>
-          <None Include="Resources\icon.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
-        </ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\icon.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\GroupDocs.Viewer.Cli.Common\GroupDocs.Viewer.Cli.Common.csproj" />
 		<ProjectReference Include="..\GroupDocs.Viewer.Cli.Utils\GroupDocs.Viewer.Cli.Utils.csproj" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
-	  <Folder Include="Enums\" />
+		<Folder Include="Enums\" />
 	</ItemGroup>
 </Project>

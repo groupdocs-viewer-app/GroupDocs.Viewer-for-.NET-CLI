@@ -161,7 +161,8 @@ namespace GroupDocs.Viewer.Cli
 
         private static void PrintVersion()
         {
-            Reporter.Output.WriteLine(Product.Version);
+            Reporter.Output.WriteLine("CLI: " + Product.CLIVersion);
+            Reporter.Output.WriteLine("GroupDocs.Viewer: " + Product.GroupDocsViewerVersion);
         }
     }
 }
