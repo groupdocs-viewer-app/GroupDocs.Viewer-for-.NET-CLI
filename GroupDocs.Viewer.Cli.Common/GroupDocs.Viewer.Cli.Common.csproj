@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="GroupDocs.Viewer" Version="22.1.1" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.80.3" />
   </ItemGroup>
 
   <ItemGroup>
