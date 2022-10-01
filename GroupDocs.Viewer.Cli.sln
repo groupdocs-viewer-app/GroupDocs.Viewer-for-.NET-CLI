@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Viewer.Cli.Utils", "GroupDocs.Viewer.Cli.Utils\GroupDocs.Viewer.Cli.Utils.csproj", "{35D43AEF-5BEE-460F-B2F0-D082E45FB166}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Viewer.Cli.Utils", "src\GroupDocs.Viewer.Cli.Utils\GroupDocs.Viewer.Cli.Utils.csproj", "{35D43AEF-5BEE-460F-B2F0-D082E45FB166}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Viewer.Cli.Common", "GroupDocs.Viewer.Cli.Common\GroupDocs.Viewer.Cli.Common.csproj", "{03DA0C40-CE2B-422A-B5C3-39D1099E0846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Viewer.Cli.Common", "src\GroupDocs.Viewer.Cli.Common\GroupDocs.Viewer.Cli.Common.csproj", "{03DA0C40-CE2B-422A-B5C3-39D1099E0846}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Viewer.Cli", "GroupDocs.Viewer.Cli\GroupDocs.Viewer.Cli.csproj", "{0139C344-44D8-4863-8702-B95808551935}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Viewer.Cli", "src\GroupDocs.Viewer.Cli\GroupDocs.Viewer.Cli.csproj", "{0139C344-44D8-4863-8702-B95808551935}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Viewer.Cli.Tests", "GroupDocs.Viewer.Cli.Tests\GroupDocs.Viewer.Cli.Tests.csproj", "{2A9CC368-5545-4631-B5C2-5DC8E51BB861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Viewer.Cli.Tests", "src\GroupDocs.Viewer.Cli.Tests\GroupDocs.Viewer.Cli.Tests.csproj", "{2A9CC368-5545-4631-B5C2-5DC8E51BB861}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Viewer.Cli.Tests.Docker", "GroupDocs.Viewer.Cli.Tests.Docker\GroupDocs.Viewer.Cli.Tests.Docker.csproj", "{C37582FF-3ADE-4381-88BF-D09F71C05791}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Viewer.Cli.Tests.Docker", "src\GroupDocs.Viewer.Cli.Tests.Docker\GroupDocs.Viewer.Cli.Tests.Docker.csproj", "{C37582FF-3ADE-4381-88BF-D09F71C05791}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
