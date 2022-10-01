@@ -1,5 +1,9 @@
 # CLI for GroupDocs.Viewer for .NET
 
+![Nuget](https://img.shields.io/nuget/v/groupdocs.viewer-cli)
+![Nuget](https://img.shields.io/nuget/dt/groupdocs.viewer-cli)
+
+
 CLI - Command Line Interface for [GroupDocs.Viewer for .NET](https://products.groupdocs.com/viewer/net) document viewer and automation API.
 
 ## How to install
