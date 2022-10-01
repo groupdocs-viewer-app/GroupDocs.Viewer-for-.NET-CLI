@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<Version>22.7</Version>
+		<Version>22.9</Version>
 		<AssemblyName>groupdocs-viewer</AssemblyName>
 		<StrongNameKeyId>GroupDocsViewerCli</StrongNameKeyId>
 		<SignAssembly>true</SignAssembly>
@@ -34,6 +34,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Enums\**" />
+	  <EmbeddedResource Remove="Enums\**" />
+	  <None Remove="Enums\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="GroupDocs.Viewer" Version="22.9.0" />
 		<PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.80.3" />
 	</ItemGroup>
@@ -45,9 +51,5 @@
 	<ItemGroup>
 		<ProjectReference Include="..\GroupDocs.Viewer.Cli.Common\GroupDocs.Viewer.Cli.Common.csproj" />
 		<ProjectReference Include="..\GroupDocs.Viewer.Cli.Utils\GroupDocs.Viewer.Cli.Utils.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Enums\" />
 	</ItemGroup>
 </Project>

@@ -1,18 +1,13 @@
-name: Publish to nuget PROD
+name: Publish Prod
 on:
  workflow_dispatch:  
 
 jobs:
   publish:
-    name: build, pack & publish
+    name: build_and_publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      # - name: Setup dotnet
-      #   uses: actions/setup-dotnet@v1
-      #   with:
-      #     dotnet-version: 3.1.200
 
       # Publish
       - name: publish on version change
@@ -20,7 +15,7 @@ jobs:
         uses: rohith/publish-nuget@v2
         with:
           # Filepath of the project to be packaged, relative to root of repository
-          PROJECT_FILE_PATH: GroupDocs.Viewer.Cli/GroupDocs.Viewer.Cli.csproj
+          PROJECT_FILE_PATH: src/GroupDocs.Viewer.Cli/GroupDocs.Viewer.Cli.csproj
           
           # NuGet package id, used for version detection & defaults to project name
           PACKAGE_NAME: GroupDocs.Viewer-CLI
