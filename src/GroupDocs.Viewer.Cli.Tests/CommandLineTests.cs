@@ -2,7 +2,6 @@ using GroupDocs.Viewer.Cli.Common.Parameters;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -75,7 +74,8 @@ namespace GroupDocs.Viewer.Cli.Tests
 
             foreach (IParameter parameter in parameters)
             {
-                Assert.IsTrue(result.Contains(parameter.ParameterName), "Full parameter name should be displayed in console" + result);
+                Assert.IsTrue(result.Contains(parameter.ParameterName), 
+                    "Full parameter name should be displayed in console" + result);
             }
         }
 
@@ -132,7 +132,8 @@ namespace GroupDocs.Viewer.Cli.Tests
 
             foreach (IParameter parameter in parameters)
             {
-                Assert.IsFalse(result.Contains(parameter.Description), "Full parameter name should not be displayed in console" + result);
+                Assert.IsFalse(result.Contains(parameter.Description), 
+                    "Full parameter name should not be displayed in console" + result);
             }
         }
 
@@ -155,13 +156,12 @@ namespace GroupDocs.Viewer.Cli.Tests
         private List<IParameter> GetAllParameters()
         {
             var type = typeof(IParameter);
-            var types = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(s => s.GetTypes())
-                .Where(p => type.IsAssignableFrom(p) && !p.IsAbstract).Select(x => Activator.CreateInstance(x) as IParameter).ToList();
+            var types = Assembly.GetAssembly(typeof(IParameter))
+                .GetTypes()
+                .Where(p => type.IsAssignableFrom(p) && !p.IsAbstract)
+                .Select(x => Activator.CreateInstance(x) as IParameter).ToList();
 
             return types;
         }
-
-        
     }
 }
