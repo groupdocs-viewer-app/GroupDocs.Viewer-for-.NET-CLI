@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<Version>22.11</Version>
+		<Version>23.1</Version>
 		<AssemblyName>groupdocs-viewer</AssemblyName>
 		<StrongNameKeyId>GroupDocsViewerCli</StrongNameKeyId>
 		<SignAssembly>true</SignAssembly>
