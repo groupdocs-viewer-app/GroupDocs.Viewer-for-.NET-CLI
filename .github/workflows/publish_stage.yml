@@ -7,10 +7,10 @@ jobs:
     name: publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.0.x
       
@@ -20,7 +20,27 @@ jobs:
       - name: Pack
         run: dotnet pack --include-symbols -p:SymbolPackageFormat=snupkg --no-build -c Release src/GroupDocs.Viewer.Cli/GroupDocs.Viewer.Cli.csproj -o .
 
+      - name: Write cert
+        env:
+          PFX_IN_BASE64: ${{ secrets.PFX_IN_BASE64 }}
+          PFX_PATH: ${{ secrets.PFX_PATH }}
+        run: echo "${PFX_IN_BASE64}" | base64 --decode ${PFX_PATH}
+      
+      - name: Sign
+        env: 
+          PFX_PATH: ${{ secrets.PFX_PATH }}
+          PFX_TMS: ${{ secrets.PFX_TMS }}
+        run: dotnet nuget sigh *.nupkg --certificate-path ${PFX_PATH} --timestamper ${PFX_TMS}
+
+      - name: Verify
+        run: dotnet nuget verify *.nupkg --All
+
+      - name: Remove cert
+        env: 
+           PFX_PATH: ${{ secrets.PFX_PATH }}
+        run: rm $PFX_PATH
+        
       - name: Publish
-        run: dotnet nuget push *.nupkg -s https://apiint.nugettest.org/v3/index.json -k ${NUGET_TOKEN} --skip-duplicate 
         env:
           NUGET_TOKEN: ${{ secrets.NUGET_API_KEY_STAGE }}
+        run: dotnet nuget push *.nupkg -s https://apiint.nugettest.org/v3/index.json -k ${NUGET_TOKEN} --skip-duplicate 
