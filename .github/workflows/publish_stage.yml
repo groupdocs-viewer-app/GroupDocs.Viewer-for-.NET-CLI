@@ -29,8 +29,9 @@ jobs:
       - name: Sign
         env: 
           PFX_PATH: ${{ secrets.PFX_PATH }}
+          PFX_PWD: ${{ secrets.PFX_PWD }}
           PFX_TMS: ${{ secrets.PFX_TMS }}
-        run: dotnet nuget sigh *.nupkg --certificate-path ${PFX_PATH} --timestamper ${PFX_TMS}
+        run: dotnet nuget sign *.nupkg --certificate-path ${PFX_PATH} --certificate-password ${PFX_PWD} --timestamper ${PFX_TMS} 
 
       - name: Verify
         run: dotnet nuget verify *.nupkg --All
