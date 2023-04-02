@@ -33,7 +33,7 @@ jobs:
         run: dotnet nuget sign *.nupkg --certificate-path ${PFX_PATH} --certificate-password ${PFX_PWD} --timestamper ${PFX_TMS} 
 
       - name: Verify
-        run: dotnet nuget verify *.nupkg --All
+        run: dotnet nuget verify *.nupkg
 
       - name: Remove cert
         env: 
