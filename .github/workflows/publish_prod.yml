@@ -24,7 +24,7 @@ jobs:
         env:
           PFX_IN_BASE64: ${{ secrets.PFX_IN_BASE64 }}
           PFX_PATH: ${{ secrets.PFX_PATH }}
-        run: echo "${PFX_IN_BASE64}" | base64 --decode ${PFX_PATH}
+        run: echo "${PFX_IN_BASE64}" | base64 --decode > ${PFX_PATH}
       
       - name: Sign
         env: 
