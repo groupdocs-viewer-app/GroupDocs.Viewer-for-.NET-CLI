@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GroupDocs.Viewer" Version="23.8.0" />
+    <PackageReference Include="GroupDocs.Viewer" Version="23.10.0" />
   </ItemGroup>
 
   <ItemGroup>
