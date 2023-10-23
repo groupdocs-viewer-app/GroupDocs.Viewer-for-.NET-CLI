@@ -5,7 +5,7 @@
     <version>$version$</version>
     <authors>GroupDocs</authors>
     <owners>GroupDocs</owners>
-    <projectUrl>https://github.com/groupdocs-viewer/GroupDocs.Viewer-for-.NET-CLI</projectUrl>
+    <projectUrl>https://github.com/groupdocs-viewer-app/GroupDocs.Viewer-for-.NET-CLI</projectUrl>
     <icon>Resources\icon.png</icon>
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
