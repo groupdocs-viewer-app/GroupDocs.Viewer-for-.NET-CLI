@@ -39,7 +39,7 @@ Note: GroupDocs.Viewer for .NET will run in evaluation mode. In order to test fu
 
     </description>
    <summary>View and convert documents, intuitive and powerful GroupDocs.Viewer dotnet tool CLI.</summary>
-   <copyright>©Aspose Pty Ltd 2001-2022. All Rights Reserved.</copyright>
+   <copyright>©Aspose Pty Ltd 2001-2024. All Rights Reserved.</copyright>
    <tags>
     Document-Viewer CLI Html-Viewer Image-Viewer PDF-Viewer
     Doc-Viewer PDF Word Excel PowerPoint EMail Image PDF DOC DOCX NUMBERS XLS XLSX PPT PPTX TIFF PNG JPG
@@ -50,7 +50,7 @@ Note: GroupDocs.Viewer for .NET will run in evaluation mode. In order to test fu
   </metadata>
   <files>
   <file src="Resources\icon.png" target="Resources\" />
-    <file src="obj\DotnetToolSettings.xml" target="tools\netcoreapp3.1\any\DotnetToolSettings.xml" />
-    <file src="bin\Release\netcoreapp3.1\publish\**" target="tools\netcoreapp3.1\any" />
+    <file src="obj\DotnetToolSettings.xml" target="tools\net6.0\any\DotnetToolSettings.xml" />
+    <file src="bin\Release\net6.0\publish\**" target="tools\net6.0\any" />
   </files>
 </package>
