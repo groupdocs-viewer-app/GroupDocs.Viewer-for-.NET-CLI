@@ -5,7 +5,7 @@
 		<AssemblyName>groupdocs-viewer</AssemblyName>
 		<StrongNameKeyId>GroupDocsViewerCli</StrongNameKeyId>
 		<SignAssembly>true</SignAssembly>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<TargetFramework>net6.0</TargetFramework>
 		<RootNamespace>GroupDocs.Viewer.Cli</RootNamespace>
 		<PackageId>GroupDocs.Viewer-CLI</PackageId>
 		<IsPackable>true</IsPackable>
@@ -40,7 +40,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GroupDocs.Viewer" Version="23.12.0" />
+		<PackageReference Include="GroupDocs.Viewer" Version="24.1.1" />
 	</ItemGroup>
 
 	<ItemGroup>
