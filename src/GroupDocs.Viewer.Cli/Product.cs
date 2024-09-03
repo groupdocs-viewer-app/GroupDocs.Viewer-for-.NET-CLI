@@ -10,8 +10,8 @@ namespace GroupDocs.Viewer.Cli
         private static string GetGroupDocsViewerProductVersion()
         {
             Assembly viewerAssembly = Assembly.GetAssembly(typeof(GroupDocs.Viewer.License));
-            FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(viewerAssembly.Location);
-            
+            FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(viewerAssembly?.Location ?? string.Empty);
+
             return fileVersionInfo.FileVersion;
         }
 
@@ -19,7 +19,7 @@ namespace GroupDocs.Viewer.Cli
 
         private static string GetCliProductVersion()
         {
-            return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            return Assembly.GetExecutingAssembly().GetName().Version?.ToString();
         }
     }
 }
