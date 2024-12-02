@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<Version>24.10.0</Version>
+		<Version>24.11.0</Version>
 		<AssemblyName>groupdocs-viewer</AssemblyName>
 		<StrongNameKeyId>GroupDocsViewerCli</StrongNameKeyId>
 		<SignAssembly>true</SignAssembly>
@@ -40,7 +40,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GroupDocs.Viewer" Version="24.9.0" />
+		<PackageReference Include="GroupDocs.Viewer" Version="24.11.0" />
 	</ItemGroup>
 
 	<ItemGroup>
