@@ -6,7 +6,7 @@
     <authors>GroupDocs</authors>
     <owners>GroupDocs</owners>
     <projectUrl>https://github.com/groupdocs-viewer-app/GroupDocs.Viewer-for-.NET-CLI</projectUrl>
-    <icon>Resources\icon.png</icon>
+    <icon>images\icon.png</icon>
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
@@ -49,8 +49,8 @@ Note: GroupDocs.Viewer for .NET will run in evaluation mode. In order to test fu
     </packageTypes>
   </metadata>
   <files>
-  <file src="Resources\icon.png" target="Resources\" />
-    <file src="obj\DotnetToolSettings.xml" target="tools\net6.0\any\DotnetToolSettings.xml" />
-    <file src="bin\Release\net6.0\publish\**" target="tools\net6.0\any" />
+  <file src="Resources\icon.png" target="images\" />
+    <file src="obj\DotnetToolSettings.xml" target="tools\net8.0\any\DotnetToolSettings.xml" />
+    <file src="bin\Release\net8.0\publish\**" target="tools\net8.0\any" />
   </files>
 </package>

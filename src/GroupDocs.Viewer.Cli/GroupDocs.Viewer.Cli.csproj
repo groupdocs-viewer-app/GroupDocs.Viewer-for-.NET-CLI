@@ -5,7 +5,7 @@
 		<AssemblyName>groupdocs-viewer</AssemblyName>
 		<StrongNameKeyId>GroupDocsViewerCli</StrongNameKeyId>
 		<SignAssembly>true</SignAssembly>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<RootNamespace>GroupDocs.Viewer.Cli</RootNamespace>
 		<PackageId>GroupDocs.Viewer-CLI</PackageId>
 		<IsPackable>true</IsPackable>

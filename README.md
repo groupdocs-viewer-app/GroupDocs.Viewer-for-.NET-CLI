@@ -8,10 +8,10 @@ CLI - Command Line Interface for [GroupDocs.Viewer for .NET](https://products.gr
 
 ## How to install
 
-GroupDocs.Viewer CLI is a dotnet tool. To start using the CLI you'll need .NET runtime and GroupDocs.Viewer CLI.
+GroupDocs.Viewer CLI is a dotnet tool. To start using the CLI you'll need the .NET 8 runtime and GroupDocs.Viewer CLI.
 
-1. Install .NET Core runtime following by the [instructions](https://docs.microsoft.com/en-us/dotnet/core/install/)
-2. Install dotnet tool by running `dotnet tool install --global groupDocs.viewer-cli`
+1. Install the .NET 8 runtime following the [installation guide](https://dotnet.microsoft.com/download/dotnet/8.0)
+2. Install the dotnet tool by running `dotnet tool install --global groupdocs.viewer-cli`
 3. You can run GroupDocs.Viewer.CLI by using command `groupdocs-viewer`
 
 ## Example usage
@@ -28,7 +28,7 @@ Set `output-format` parameter value to `PDF` to convert document to PDF:
 groupdocs-viewer view source.docx --output-format PDF
 ```
 
-Set `pages` parameter valued to `1,3,4` to convert first three pages of the document:
+Set `pages` parameter value to `1,2,3` to convert the first three pages of the document:
 
 ```bash
 groupdocs-viewer view source.docx --output-format pdf --pages 1,2,3
@@ -96,25 +96,17 @@ Also, you can set path to the license file in `GROUPDOCS_VIEWER_LICENSE_PATH` en
 
 ## Linux dependencies
 
-For correct deploy please install the following package dependencies:
+To run on Linux, install the following package dependencies:
 
-* `apt-transport-https`
-* `dirmngr`
-* `gnupg`
 * `libc6-dev`
 * `libgdiplus`
 * `libx11-dev`
+* `libfontconfig1`
 * `ttf-mscorefonts-installer`
 
-As an example the following commands should be executed to install the dependencies on [Ubuntu 18.04.5 LTS (Bionic Beaver)](https://releases.ubuntu.com/18.04.5/):
+Example for Debian/Ubuntu (22.04+):
 
-* `apt-get update`
-* `apt-get install -y apt-transport-https`
-* `apt-get install -y dirmngr`
-* `apt-get install -y gnupg`
-* `apt-get install -y ca-certificates`
-* `apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys $ 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF`
-* `echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic $ main" >> /etc/apt/sources.list.d/mono-official-stable.list`
-* `apt-get update`
-* `apt-get install -y --allow-unauthenticated libc6-dev libgdiplus libx11-dev`
-* `apt-get install -y ttf-mscorefonts-installer`
+```bash
+sudo apt-get update
+sudo apt-get install -y libc6-dev libgdiplus libx11-dev libfontconfig1 ttf-mscorefonts-installer
+```
