@@ -51,9 +51,7 @@ jobs:
 
       - name: Publish to Prod
         working-directory: ${{ github.workspace }}\artifacts
-        env:
-          NUGET_TOKEN: ${{ secrets.NUGET_API_KEY_PROD }}
-        run: dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json -k ${NUGET_TOKEN} --skip-duplicate
+        run: dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY_PROD }} --skip-duplicate
 
       - name: Archive packages
         uses: actions/upload-artifact@v4
