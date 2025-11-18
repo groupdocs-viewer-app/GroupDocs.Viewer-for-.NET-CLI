@@ -18,6 +18,7 @@
 		<PackageIcon>images\icon.png</PackageIcon>
 		<PreserveCompilationContext>true</PreserveCompilationContext>
 		<PreserveCompilationReferences>true</PreserveCompilationReferences>
+		<DebugType>portable</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup>
