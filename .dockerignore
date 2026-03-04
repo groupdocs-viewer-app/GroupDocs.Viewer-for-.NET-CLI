@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+**/nupkg/
+**/.vs/
+**/.vscode/
+.claude/
+.git/
+.github/
+build_out/
+*.lic

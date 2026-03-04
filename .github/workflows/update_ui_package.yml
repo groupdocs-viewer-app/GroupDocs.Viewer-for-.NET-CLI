@@ -1,0 +1,74 @@
+name: Update UI Package
+
+on:
+  repository_dispatch:
+    types: [ui-package-published]
+  schedule:
+    - cron: '0 6 * * *' # Daily at 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  check-update:
+    runs-on: windows-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get current version
+        id: current
+        shell: pwsh
+        run: |
+          [xml]$props = Get-Content build/dependencies.props
+          $version = $props.Project.PropertyGroup.GroupDocsViewerUIVersion
+          echo "version=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Get latest NuGet version
+        id: latest
+        shell: pwsh
+        run: |
+          $response = Invoke-RestMethod "https://api.nuget.org/v3-flatcontainer/groupdocs.viewer.ui/index.json"
+          $latest = $response.versions | Select-Object -Last 1
+          echo "version=$latest" >> $env:GITHUB_OUTPUT
+
+      - name: Compare versions
+        id: compare
+        shell: pwsh
+        run: |
+          $current = "${{ steps.current.outputs.version }}"
+          $latest = "${{ steps.latest.outputs.version }}"
+          $needsUpdate = $current -ne $latest
+          echo "current=$current" >> $env:GITHUB_OUTPUT
+          echo "latest=$latest" >> $env:GITHUB_OUTPUT
+          echo "needs_update=$needsUpdate" >> $env:GITHUB_OUTPUT
+
+      - name: Update dependencies.props
+        if: steps.compare.outputs.needs_update == 'True'
+        shell: pwsh
+        run: |
+          $file = "build/dependencies.props"
+          $content = Get-Content $file -Raw
+          $content = $content -replace '<GroupDocsViewerUIVersion>[^<]+</GroupDocsViewerUIVersion>', "<GroupDocsViewerUIVersion>${{ steps.compare.outputs.latest }}</GroupDocsViewerUIVersion>"
+          Set-Content $file $content -NoNewline
+
+      - name: Build and test
+        if: steps.compare.outputs.needs_update == 'True'
+        run: |
+          dotnet build ./GroupDocs.Viewer.Cli.sln
+          dotnet test ./GroupDocs.Viewer.Cli.sln --no-build
+
+      - name: Create Pull Request
+        if: steps.compare.outputs.needs_update == 'True'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update GroupDocs.Viewer.UI to ${{ steps.compare.outputs.latest }}"
+          title: "Update GroupDocs.Viewer.UI to ${{ steps.compare.outputs.latest }}"
+          body: |
+            Automated update of GroupDocs.Viewer.UI from ${{ steps.compare.outputs.current }} to ${{ steps.compare.outputs.latest }}.
+
+            - Updated `build/dependencies.props`
+            - Build and tests passed
+          branch: update-ui-${{ steps.compare.outputs.latest }}
+          delete-branch: true
