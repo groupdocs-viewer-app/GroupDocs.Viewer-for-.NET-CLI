@@ -12,10 +12,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Get version
+        id: version
+        shell: pwsh
+        run: |
+          [xml]$props = Get-Content build/dependencies.props
+          $version = $props.Project.PropertyGroup.GroupDocsViewerUIVersion
+          echo "version=$version" >> $env:GITHUB_OUTPUT
+
       - name: Build packages
         run: |
-          dotnet build -c Release src/GroupDocs.Viewer.Cli/GroupDocs.Viewer.Cli.csproj
-          dotnet pack --include-symbols -p:SymbolPackageFormat=snupkg --no-build -c Release src/GroupDocs.Viewer.Cli/GroupDocs.Viewer.Cli.csproj -o ./build_out
+          dotnet publish -c Release src/GroupDocs.Viewer.Cli/GroupDocs.Viewer.Cli.csproj
+          dotnet pack -p:NuspecProperties="version=${{ steps.version.outputs.version }}" --no-build -c Release src/GroupDocs.Viewer.Cli/GroupDocs.Viewer.Cli.csproj -o ./build_out
 
       - name: Download CodeSignTool
         run: |
@@ -52,14 +60,6 @@ jobs:
       - name: Publish to Prod
         working-directory: ${{ github.workspace }}\artifacts
         run: dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY_PROD }} --skip-duplicate
-
-      - name: Get version
-        id: version
-        shell: pwsh
-        run: |
-          [xml]$props = Get-Content build/dependencies.props
-          $version = $props.Project.PropertyGroup.GroupDocsViewerUIVersion
-          echo "version=$version" >> $env:GITHUB_OUTPUT
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
