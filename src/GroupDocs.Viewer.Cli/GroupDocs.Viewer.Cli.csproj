@@ -25,4 +25,17 @@
     <PackageReference Include="GroupDocs.Viewer.UI.Api.Local.Cache" Version="$(GroupDocsViewerUIVersion)" />
   </ItemGroup>
 
+
+  <!--
+    SkiaSharp's native asset packages ship .pdb symbol files next to each native library
+    (243 MB across win-x64/x86/arm64 alone). They are debug symbols for native code that
+    nothing in a shipped dotnet tool can use, and they nearly doubled the package - which
+    is also what pushed CodeSignTool past its heap limit. Drop every .pdb from publish.
+  -->
+  <Target Name="RemovePdbsFromPublish" AfterTargets="ComputeResolvedFilesToPublishList">
+    <ItemGroup>
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="'%(Extension)' == '.pdb'" />
+    </ItemGroup>
+  </Target>
+
 </Project>
