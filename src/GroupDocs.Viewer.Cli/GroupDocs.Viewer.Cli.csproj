@@ -25,16 +25,69 @@
     <PackageReference Include="GroupDocs.Viewer.UI.Api.Local.Cache" Version="$(GroupDocsViewerUIVersion)" />
   </ItemGroup>
 
+  <!--
+    ===========================================================================
+    Package size control.
+
+    The rendering engine and its native assets dominate this package. Left
+    alone it packs to 347 MB, which is over nuget.org's 250 MB limit (push
+    fails with 413 RequestEntityTooLarge) and also overflowed CodeSignTool's
+    default 1 GB JVM heap.
+
+    Both trims hook ComputeResolvedFilesToPublishList rather than Publish:
+    `dotnet pack` on a PackAsTool project repopulates the publish folder
+    without running the Publish target, so anything hooked there is silently
+    undone by pack.
+    ===========================================================================
+  -->
 
   <!--
-    SkiaSharp's native asset packages ship .pdb symbol files next to each native library
-    (243 MB across win-x64/x86/arm64 alone). They are debug symbols for native code that
-    nothing in a shipped dotnet tool can use, and they nearly doubled the package - which
-    is also what pushed CodeSignTool past its heap limit. Drop every .pdb from publish.
+    SkiaSharp's native asset packages ship a .pdb next to each native library -
+    243 MB across win-x64/x86/arm64 alone. They are debug symbols for native
+    code that nothing in a shipped dotnet tool can use.
   -->
   <Target Name="RemovePdbsFromPublish" AfterTargets="ComputeResolvedFilesToPublishList">
     <ItemGroup>
       <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="'%(Extension)' == '.pdb'" />
+    </ItemGroup>
+  </Target>
+
+  <!--
+    SkiaSharp ships native binaries for 15 RIDs. A .NET CLI tool is not going to
+    run on loongarch64, riscv64, 32-bit Linux or musl-on-ARM32.
+
+    Kept: win x64/x86/arm64, linux glibc x64/arm64, linux musl x64/arm64,
+    osx x64/arm64, plus the RID-agnostic "win"/"linux"/"osx"/"unix" folders that
+    carry the Aspose.Slides drawing libraries.
+
+    Matched on a normalised path so the leading "runtimes/<rid>/" segment is
+    exact - a plain Contains would make "linux-arm" also strip "linux-arm64".
+  -->
+  <Target Name="TrimUnusedRuntimeIds" AfterTargets="ComputeResolvedFilesToPublishList">
+    <ItemGroup>
+      <ResolvedFileToPublish>
+        <RidPath>$([System.String]::Copy('%(RelativePath)').Replace('\','/'))</RidPath>
+      </ResolvedFileToPublish>
+
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/browser/'))" />
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-arm/'))" />
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-x86/'))" />
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-loongarch64/'))" />
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-riscv64/'))" />
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-musl-arm/'))" />
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-musl-loongarch64/'))" />
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-musl-riscv64/'))" />
+
+      <!--
+        32-bit Windows. Dropping it is what finally brings the package under the 250 MB
+        limit (46 MB: the win-x86 RID folder plus the x86 Aspose.Slides build, which lives
+        in the RID-agnostic "win" folder and so needs matching by file name).
+
+        Rendering is a poor fit for x86 regardless - the engine assembly alone is 118 MB,
+        and large documents are unlikely to fit a 32-bit address space.
+      -->
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/win-x86/'))" />
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(Filename)').Contains('vc14x86'))" />
     </ItemGroup>
   </Target>
 
