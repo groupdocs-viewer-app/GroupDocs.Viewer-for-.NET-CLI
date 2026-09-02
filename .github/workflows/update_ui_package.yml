@@ -1,10 +1,12 @@
 name: Update UI Package
 
+# No schedule: GitHub disables scheduled workflows after 60 days without repository
+# activity, and this repo goes quiet between releases - the daily run silently stopped
+# firing and the UI package version drifted. The dispatch from the UI repo's publish is
+# the real trigger; run it by hand when you need to check off-cycle.
 on:
   repository_dispatch:
     types: [ui-package-published]
-  schedule:
-    - cron: '0 6 * * *' # Daily at 06:00 UTC
   workflow_dispatch:
 
 permissions:

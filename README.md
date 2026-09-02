@@ -128,7 +128,7 @@ On Linux, install the following packages:
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y libc6-dev libgdiplus libx11-dev libfontconfig1 ttf-mscorefonts-installer
+sudo apt-get install -y libfontconfig1 ttf-mscorefonts-installer
 ```
 
 ## Supported Formats
@@ -143,7 +143,7 @@ sudo apt-get install -y libc6-dev libgdiplus libx11-dev libfontconfig1 ttf-mscor
 | Microsoft Project | MPP, MPT, MPX |
 | Microsoft Outlook | MSG, EML, EMLX, PST, OST |
 | OpenDocument | ODT, ODS, ODP, OTT, OTS, OTP, FODG, FODT, FODP |
-| Images | TIFF, JPG, PNG, GIF, BMP, PSD, SVG, WEBP, ICO, TGA, JP2, DNG, DJVU |
+| Images | TIFF, JPG, PNG, GIF, BMP, SVG, WEBP, ICO, TGA, JP2, DNG, DJVU |
 | CAD & 3D | DXF, DWG, DWT, STL, IFC, DWF, DGN, OBJ, CF2, PLT, HPG |
 | Archives | ZIP, TAR, RAR, 7Z, GZ, BZ2, XZ |
 | Ebooks | EPUB, MOBI |
@@ -151,6 +151,9 @@ sudo apt-get install -y libc6-dev libgdiplus libx11-dev libfontconfig1 ttf-mscor
 | Source Code | CS, VB, Java, JS, TS, PY, PHP, SQL, CSS, JSON, and more |
 
 See the full list at [docs.groupdocs.com/viewer/net/supported-document-formats](https://docs.groupdocs.com/viewer/net/supported-document-formats/).
+
+> **Note**: PSD, PSB, AI and ONE are not rendered as of 26.8.0. They are provided only by the
+> Windows-specific engine build, which this cross-platform tool does not use.
 
 ## Resources
 
