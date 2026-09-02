@@ -48,10 +48,12 @@ static void PrintVersion()
 
 static void PrintBanner(CliOptions options)
 {
-    var version = typeof(CliOptions).Assembly
+    // InformationalVersion carries a +<commit sha> suffix from SourceLink;
+    // show the product version only.
+    var version = (typeof(CliOptions).Assembly
         .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion
         ?? typeof(CliOptions).Assembly.GetName().Version?.ToString()
-        ?? "unknown";
+        ?? "unknown").Split('+')[0];
 
     Console.WriteLine($$"""
 

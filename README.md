@@ -16,7 +16,7 @@ groupdocs-viewer .
  | |_| | | | (_) | |_| | ,| |_| | (_) | (__\__ \
   \____|_|  \___/ \__,_|_|| ____/ \___/ \___|___/
                           |_|
-  V I E W E R  26.3.0
+  V I E W E R  26.8.0
 
   Serving files from: /home/user/documents
   Listening on: http://localhost:8080/
