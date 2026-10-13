@@ -16,7 +16,7 @@ groupdocs-viewer .
  | |_| | | | (_) | |_| | ,| |_| | (_) | (__\__ \
   \____|_|  \___/ \__,_|_|| ____/ \___/ \___|___/
                           |_|
-  V I E W E R  26.8.0
+  V I E W E R  26.9.0
 
   Serving files from: /home/user/documents
   Listening on: http://localhost:8080/
@@ -152,7 +152,7 @@ sudo apt-get install -y libfontconfig1 ttf-mscorefonts-installer
 
 See the full list at [docs.groupdocs.com/viewer/net/supported-document-formats](https://docs.groupdocs.com/viewer/net/supported-document-formats/).
 
-> **Note**: PSD, PSB, AI and ONE are not rendered as of 26.8.0. They are provided only by the
+> **Note**: PSD, PSB, AI and ONE are not rendered since 26.8.0. They are provided only by the
 > Windows-specific engine build, which this cross-platform tool does not use.
 
 ## Resources
