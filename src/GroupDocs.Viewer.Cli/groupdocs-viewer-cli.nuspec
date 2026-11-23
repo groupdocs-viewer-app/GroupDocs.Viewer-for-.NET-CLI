@@ -24,7 +24,8 @@
   <files>
     <file src="Resources\icon.png" target="images\" />
     <file src="..\..\README.md" target="docs\" />
-    <file src="obj\DotnetToolSettings.xml" target="tools\net10.0\any\DotnetToolSettings.xml" />
+    <!-- The .NET 10 SDK writes this file to the intermediate output folder, no longer directly to obj -->
+    <file src="obj\Release\net10.0\DotnetToolSettings.xml" target="tools\net10.0\any\DotnetToolSettings.xml" />
     <file src="bin\Release\net10.0\publish\**" target="tools\net10.0\any" />
   </files>
 </package>
