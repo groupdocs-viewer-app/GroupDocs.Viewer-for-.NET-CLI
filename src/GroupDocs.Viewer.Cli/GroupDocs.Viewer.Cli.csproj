@@ -4,7 +4,10 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
+    <!-- A .NET tool runs only on the runtime of its major version unless it rolls forward.
+         Major lets it run on a newer runtime when .NET 10 isn't installed. -->
+    <RollForward>Major</RollForward>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyName>groupdocs-viewer</AssemblyName>
@@ -54,7 +57,9 @@
 
   <!--
     SkiaSharp ships native binaries for 15 RIDs. A .NET CLI tool is not going to
-    run on loongarch64, riscv64, 32-bit Linux or musl-on-ARM32.
+    run on loongarch64, riscv64, 32-bit Linux, musl-on-ARM32 or Android, whose
+    linux-bionic RIDs came with SkiaSharp 4 (25 MB, which left the package within
+    1% of the limit).
 
     Kept: win x64/x86/arm64, linux glibc x64/arm64, linux musl x64/arm64,
     osx x64/arm64, plus the RID-agnostic "win"/"linux"/"osx"/"unix" folders that
@@ -77,6 +82,7 @@
       <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-musl-arm/'))" />
       <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-musl-loongarch64/'))" />
       <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-musl-riscv64/'))" />
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="$([System.String]::Copy('%(RidPath)').StartsWith('runtimes/linux-bionic-'))" />
 
       <!--
         32-bit Windows. Dropping it is what finally brings the package under the 250 MB

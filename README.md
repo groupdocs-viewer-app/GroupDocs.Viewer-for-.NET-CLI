@@ -16,7 +16,7 @@ groupdocs-viewer .
  | |_| | | | (_) | |_| | ,| |_| | (_) | (__\__ \
   \____|_|  \___/ \__,_|_|| ____/ \___/ \___|___/
                           |_|
-  V I E W E R  26.9.0
+  V I E W E R  26.10.0
 
   Serving files from: /home/user/documents
   Listening on: http://localhost:8080/
@@ -26,7 +26,7 @@ groupdocs-viewer .
 
 ## Install
 
-Requires [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0) or later.
+Requires [.NET 10](https://dotnet.microsoft.com/download/dotnet/10.0) or later.
 
 ```bash
 dotnet tool install --global GroupDocs.Viewer-CLI

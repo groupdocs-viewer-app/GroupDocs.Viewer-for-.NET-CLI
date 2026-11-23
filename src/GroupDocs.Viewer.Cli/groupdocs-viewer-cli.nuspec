@@ -24,7 +24,7 @@
   <files>
     <file src="Resources\icon.png" target="images\" />
     <file src="..\..\README.md" target="docs\" />
-    <file src="obj\DotnetToolSettings.xml" target="tools\net8.0\any\DotnetToolSettings.xml" />
-    <file src="bin\Release\net8.0\publish\**" target="tools\net8.0\any" />
+    <file src="obj\DotnetToolSettings.xml" target="tools\net10.0\any\DotnetToolSettings.xml" />
+    <file src="bin\Release\net10.0\publish\**" target="tools\net10.0\any" />
   </files>
 </package>
